@@ -1,4 +1,4 @@
-# 카카오페이 손해보험 Front-end 과제 (catching a mole)
+# catching a mole (두더지 잡기)
 
 ## 화면 관리 및 구조
 
@@ -67,8 +67,6 @@
 ### State 
 1. Redux 스토어 구조
     - mole 랩핑 클래스
-    - 개발자도구 콘솔 -> devmole
-        - redux tools보다 console 확인, 변경 방식 용이
         
 ![console](public/images/console.png)
 
