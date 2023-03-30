@@ -1,0 +1,95 @@
+import ConsoleImg from '../asset/console.png';
+
+<Meta title="docs/Intro" />
+
+<style>{`
+    body {
+        overflow: scroll !important;
+    }
+`}</style>
+
+# 화면 관리 및 구조
+
+<br/>
+
+## Directory
+```
+├── .storybook
+├── build  // 빌드  
+├── node_modules
+├── public // 템플릿 및 Static 폴더
+│    ├── images
+│    ├── index.html
+├── src
+│    ├── comp // 공통 컴포넌트
+│    ├── core // 공통 코어
+│        ├── List.ts // 리스트 관리
+│        ├── Module.ts // 공통 로직 관리
+│        ├── Mole.ts // mole로 접근되도록 메소드 랩핑 클래스
+│        ├── Utils.ts // 공통 유틸리티 메소드
+│    ├── css
+│        ├── Common.css // 공통 css
+│        ├── Page.css // 화면별 css
+│    ├── hooks // 커스텀 hooks
+│    ├── manager
+│        ├── Alert.tsx // 얼럿 관리
+│        ├── Modal.tsx // 모달 관리
+│    ├── page
+│        ├── Game.tsx // 게임 화면
+│        ├── NotFound.tsx // 404 화면
+│        ├── Rank.tsx // 순위 화면
+│        ├── Ready.tsx // 준비 화면
+│    ├── store
+│        ├── Data.ts // 데이터 관련
+│        ├── Store.ts // 데이터 + 뷰
+│        ├── View.ts // 화면 관련
+│    ├── stories
+│        ├── common.css
+│        ├── asset // Static 폴더
+│        ├── comp // 공통 컴포넌트
+│        ├── core // 공통 코어
+│        ├── docs // 마크업
+│    ├── type
+│        ├── Type.ts // 공통 타입
+│    ├── index.tsx
+│    ├── Main.tsx
+│    ├── reportWebVitals.js
+│    ├── setupTests.js
+├── .gitignore
+├── .npmrc
+├── package.json
+├── package-lock.json
+├── README.md
+```
+
+## 개발 환경
+    - 코어: React, TypeScript
+    - 상태 관리: Redux
+    - 스타일링: Css, Styled Component
+
+## Node Modules
+    - react-redux(+Redux)   // 전체 데이터 및 상태 관리
+    - react-router-dom      // 페이지 이동 제어
+    - redux-logger          // 상태 변경 시 로그 확인
+    - styled-components     // 컴포넌트 단위 스타일링
+    - storybook(+addon)     // 스토리북
+    
+## State 
+1. Redux 스토어 구조
+    - mole 랩핑 클래스
+    - 개발자도구 콘솔 -> devmole
+        - redux tools보다 console 확인, 변경 방식 용이
+
+<img src={ConsoleImg} />
+    
+
+## Style
+1. css
+    - common.css: 공통 관리
+    - page.css: 공통을 제외한 페이지에서 따로 사용되는 css 관리
+2. styled-components 
+    - 스타일과 컴포넌트가 깊게 엮여 Alert에서만 사용
+
+
+
+

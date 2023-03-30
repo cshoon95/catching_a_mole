@@ -1,0 +1,90 @@
+/* 페이지 틀 */
+.main {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+/* 홈 화면 */
+.main .intro-wrap {
+    display: inline-flex;
+    text-align: center;
+    transform: translate(0%, 30%);
+}
+.intro-wrap .intro-image {
+    float: left;
+    display: block;
+    width: 500px;
+}
+.intro-wrap .intro-box {
+    float: left;
+    display: block;
+    width: 300px;
+    margin: 15% 10% 0 0;
+}
+
+/* 게임 화면 */
+.mole-list {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+    transform: translate(0%, 10%);
+    margin-top: 3%;
+}
+.mole {
+    height: 75px;
+    overflow: idden;
+    cursor: scoreer;
+    border-radius: 20px;
+    background: no-repeat center/cover url('/public/images/hole.png');
+    z-index: 2;
+}
+.mole >img {
+    position: relative;
+    bottom: -5px;
+    overflow: hidden;
+    width: 45%;
+    opacity: 0;
+    transition: all .3s ease-out;
+    z-index: 1;
+}
+.mole-list .active {
+    bottom: 0;
+    opacity: 1;
+    animation-iteration-count: infinite; 
+    position: relative;
+    animation: fadeInUp 1s;
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 20%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+/* 카운트 다운 */
+.counter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.counter.hide {
+    transform: translate(-50%, -50%) scale(0);
+    animation: hide .2s ease-out;
+}
+@keyframes hide {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
